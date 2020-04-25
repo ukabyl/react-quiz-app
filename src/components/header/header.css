@@ -1,0 +1,18 @@
+.header{
+    background-color: darkseagreen;
+    box-sizing: border-box;
+    padding: 10px 5px;
+}
+
+.header__logo{
+    text-align: center;
+    max-width: 200px;
+}
+
+.header__logo a{
+    text-transform: uppercase;
+    font-weight: 800;
+    color: aliceblue;
+    text-align: center;
+    text-decoration: none;
+}

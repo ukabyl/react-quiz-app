@@ -1,0 +1,28 @@
+.sidebar{
+    background-color: darkseagreen;
+    padding: 2rem 1rem;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar ul li{
+    margin-bottom: .55rem;
+}
+.sidebar ul li:last-child{
+    margin-bottom: 0;
+}
+
+.sidebar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    transition: .3s all ease;
+}
+
+.sidebar ul li a:hover{
+    color: black;
+}
