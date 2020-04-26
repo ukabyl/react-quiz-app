@@ -1,0 +1,27 @@
+.posts{
+
+}
+
+.textarea{
+    border: none;
+}
+
+.add-post{
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.add-post textarea{
+    margin-right: 5px;
+}
+
+.add-post button{
+    background-color: black;
+    display: block;
+    width: 100px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}

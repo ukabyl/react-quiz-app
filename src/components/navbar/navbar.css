@@ -1,0 +1,23 @@
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li{
+    margin-bottom: .55rem;
+}
+.navbar ul li:last-child{
+    margin-bottom: 0;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    transition: .3s all ease;
+}
+
+.navbar ul li a:hover{
+    color: black;
+}
