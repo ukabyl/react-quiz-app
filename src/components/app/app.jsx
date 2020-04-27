@@ -1,18 +1,27 @@
 import React from 'react'
 
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import "./app.css";
 
 import Header from '../header';
-import Sidebar from '../sidebar/sidebar';
-import Profile from '../profile/profile';
+import Sidebar from '../sidebar';
+
+import Profile from '../profile';
+import Dialogs from '../dialogs'
 
 const App = () => {
     return (
-        <div className="app">
-            <Header/>
-            <Sidebar />
-            <Profile />
-        </div>
+        <Router>
+            <div className="app">
+                <Header/>
+                <Sidebar />
+                <div className="content">
+                    <Route path="/profile" component={Profile} />
+                    <Route path="/dialogs" component={Dialogs} />
+                </div>
+            </div>
+        </Router>
     );
 }
 

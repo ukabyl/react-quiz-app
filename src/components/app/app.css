@@ -10,6 +10,12 @@
     grid-gap: 10px;
 }
 
+.content{
+    background-color: darkseagreen;
+    padding: 2rem 1rem;
+    color: #fff;
+}
+
 .header{
     grid-area: header;
 }
