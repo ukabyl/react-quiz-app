@@ -18,6 +18,10 @@
     transition: .3s all ease;
 }
 
+.navbar ul li a.active{
+    color: gold;
+}
+
 .navbar ul li a:hover{
     color: black;
 }
