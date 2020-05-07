@@ -1,0 +1,13 @@
+.answers-list{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.answers-list li{
+    margin-bottom: .45rem;
+}
+
+.answers-list:last-child{
+    margin-bottom: 0;
+}
