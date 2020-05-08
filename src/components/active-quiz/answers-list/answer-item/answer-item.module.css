@@ -13,3 +13,12 @@
     color: #000;
     background: rgba(255,255,255,.7);
 }
+
+.success, .success:hover{
+    background: limegreen;
+    color: #fff;
+}
+.error, .error:hover{
+    background: tomato;
+    color: #fff;
+}

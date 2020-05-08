@@ -1,0 +1,50 @@
+.drawer{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    max-width: 300px;
+    width: 80%;
+    background-color: #fff;
+    padding: 2rem 1rem;
+    transform: translateX(0);
+    transition: .3s all ease;
+    box-sizing: border-box;
+    z-index: 51;
+}
+
+.drawer.close{
+    transform: translateX(-300px);
+}
+
+.drawer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.drawer ul  li{
+    margin-bottom: .45rem;
+}
+
+.drawer ul  li:last-child{
+    margin-bottom: 0;
+}
+
+.drawer ul li a{
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    color: #000;
+    font-size: 20px;
+    transition: .3s all ease;
+    font-weight: 800;
+}
+
+.drawer ul li a:hover{
+    color: rgba(0,0,0,.4);
+}
+
+.drawer ul li a.active{
+    color: rgba(0,0,0,.3);
+}

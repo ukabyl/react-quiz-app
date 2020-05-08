@@ -18,5 +18,9 @@
 
 .quiz-wrapper{
     width: 600px;
+    border: 2px solid #fff;
+    padding: 20px 20px;
+    border-radius: 5px;
+    color: #fff;
 }
 

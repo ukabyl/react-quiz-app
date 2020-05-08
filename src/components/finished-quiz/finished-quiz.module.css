@@ -1,0 +1,25 @@
+.finished-quiz-list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.finished-quiz-list li{
+    margin-bottom: .75rem;
+}
+
+.finished-quiz-list li i{
+    margin-left: .45rem;
+}
+
+.success{
+    color: lightgreen;
+}
+
+.error{
+    color: tomato;
+}
+
+.finished-quiz-list li:last-child{
+    margin-bottom: 0;
+}

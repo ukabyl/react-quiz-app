@@ -1,9 +1,15 @@
 import React from 'react'
 import classes from './answer-item.module.css';
 
-const AnswerItem = ({ answer }) => {
+const AnswerItem = ({ answer, id, state }) => {
+
+    let cls = [classes['answer-item']];
+    if ( state ) {
+        cls.push(classes[state])
+    }
+
     return (
-        <span className={classes['answer-item']}>
+        <span className={cls.join(' ')}>
             { answer }
         </span>
     )

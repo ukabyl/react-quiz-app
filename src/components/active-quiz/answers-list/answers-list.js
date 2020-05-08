@@ -3,7 +3,7 @@ import classes from './answers-list.module.css';
 
 import AnswerItem from './answer-item';
 
-const AnswersList = ({ answers, onAnswerClick }) => {
+const AnswersList = ({ answers, onAnswerClick, state }) => {
     return (
         <ul className={classes['answers-list']}>
             {
@@ -13,7 +13,7 @@ const AnswersList = ({ answers, onAnswerClick }) => {
                             key={id}
                             onClick={() => onAnswerClick(id)}
                             >
-                            <AnswerItem answer={answer} />
+                            <AnswerItem answer={answer} state={state ? state[id] : null}  />
                         </li>
                     )
                 })

@@ -1,0 +1,53 @@
+.button{
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 1rem .75rem;
+    margin: 0 5px;
+    transition: .3s all ease;
+    text-decoration: none;
+}
+
+.button a{
+    transition: .3s all ease;
+    text-decoration: none;
+}
+
+.button_primary {
+    background: cornsilk;
+}
+
+.button_primary:hover{
+    background: cyan;
+    color: darkblue;
+}
+
+.button_success{
+    background: cornflowerblue;
+    color: #fff;
+}
+
+.button_success:hover{
+    background: lightgreen;
+    
+}
+
+
+.button_primary  a{
+    background: cornsilk;
+}
+
+.button_primary:hover a{
+    background: cyan;
+    color: darkblue;
+}
+
+.button_success a{
+    background: cornflowerblue;
+    color: #fff;
+}
+
+.button_success:hover a{
+    background: lightgreen;
+    
+}
