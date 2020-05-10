@@ -1,0 +1,20 @@
+.auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(270deg, #cef2fa 0%, #59bfef 100%);
+    box-shadow: 5px 5px 10px -4px #000;
+    height: 100vh;
+}
+
+.auth h1{
+    font-size: 4rem;
+}
+
+.auth form{
+    background: #fff;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+}

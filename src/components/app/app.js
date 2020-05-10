@@ -2,9 +2,9 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom';
 import Layout from '../../hoc/layout';
 import Quiz from '../../containers/quiz';
-import QuizCreator from '../../components/quiz-creator';
-import QuizList from '../../components/quiz-list';
-import Auth from '../../components/auth';
+import QuizCreator from '../../containers/quiz-creator';
+import QuizList from '../../containers/quiz-list';
+import Auth from '../../containers/auth';
 
 
 const App = () => {

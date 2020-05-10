@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
-
+import React, { useState, useEffect } from 'react'
+import axios from '../../axios/axios-quiz';
 import classes from './quiz.module.css';
 import ActiveQuiz from '../../components/active-quiz';
 import FinishedQuiz from '../../components/finished-quiz';
+import Loader from '../../components/ui/loader';
 
 const Quiz = (props) => {
 
@@ -11,58 +12,21 @@ const Quiz = (props) => {
         stateAnswer: null,
         isFinished: false,
         results: {},
-        quiz: [
-            {
-                id: 1,
-                question: 'Какого цвета небо?',
-                rightAnswerId: 2,
-                answers: [
-                    {
-                        id: 1,
-                        answer: 'Черное' 
-                    },
-                    {
-                        id: 2,
-                        answer: 'Голубое' 
-                    },
-                    {
-                        id: 3,
-                        answer: 'Красное' 
-                    },
-                    {
-                        id: 4,
-                        answer: 'Зеленое' 
-                    }
-                ]
-            },
-            {
-                id: 2,
-                question: 'В каком штатне находится город Нью-Йорк ?',
-                rightAnswerId: 2,
-                answers: [
-                    {
-                        id: 1,
-                        answer: 'Техас' 
-                    },
-                    {
-                        id: 2,
-                        answer: 'Нью-Йорк' 
-                    },
-                    {
-                        id: 3,
-                        answer: 'Флорида' 
-                    },
-                    {
-                        id: 4,
-                        answer: 'Джорджия' 
-                    }
-                ]
-            }
-        ]
+        quiz: [],
+        loading: true
     });
 
-    const onAnswerClickHandler = (answerId) => {
+    useEffect(() => {
+        const fetchData = async () => {
+            const res = await axios.get(`/quizes/${props.match.params.id}.json`);
+            const quiz = res.data; 
+            setState({...state, quiz, loading: false});
+            
+        }
+        fetchData();
+    }, [])
 
+    const onAnswerClickHandler = (answerId) => {
         if ( state.stateAnswer ) {
             const key = Object.keys(state.stateAnswer);
             if ( state.stateAnswer[key] === 'success' ) {
@@ -73,7 +37,7 @@ const Quiz = (props) => {
         const question = state.quiz[state.activeQuestion];
         const results = state.results;
 
-        if ( question.rightAnswerId === answerId ) {
+        if ( +question.rightAnswerId === answerId ) {
 
             if ( !results[question.id] ) {
                 results[question.id] = 'success';
@@ -119,12 +83,12 @@ const Quiz = (props) => {
         })
     }
 
-    console.log(props)
 
     return (
         <div className={classes.quiz}>
             <div className={classes['quiz-wrapper']}>
                 {
+                    state.loading ? <Loader /> :
                     state.isFinished ? <FinishedQuiz onRetry={onRetryHandler} results={state.results} quiz={state.quiz}  /> :
                     (
                         <>
