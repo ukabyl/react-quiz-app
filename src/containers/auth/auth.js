@@ -2,14 +2,15 @@ import React, { useState } from 'react'
 import classes from './auth.module.css';
 import Button from '../../components/ui/button';
 import Input from '../../components/ui/input';
-import axios from 'axios';
+import {auth} from '../../redux/action/auth'
+import {connect} from 'react-redux';
 
 function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
 }
 
-const Auth = () => {
+const Auth = (props) => {
 
     const [state, setState] = useState({
         isFormValid: false,
@@ -114,31 +115,12 @@ const Auth = () => {
     }
 
     const loginHandler = (e) => {
-        try{
-            const authData = {
-                email: state.formControls.email.value,
-                password: state.formControls.password.value,
-                returnSecureToken: true
-            }
-            const response = axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCLvaIxcnyZoy_be6BRJ6opkuTv4qrbGOw', authData);
-            console.log(response);
-        } catch(e) {
+        props.auth(state.formControls.email.value, state.formControls.password.value, true)
 
-        }
     }
 
     const registerHandler = async (e) => {
-        try{
-            const authData = {
-                email: state.formControls.email.value,
-                password: state.formControls.password.value,
-                returnSecureToken: true
-            }
-            const response = axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCLvaIxcnyZoy_be6BRJ6opkuTv4qrbGOw', authData);
-            console.log(response.data);
-        } catch(e) {
-
-        }
+        props.auth(state.formControls.email.value, state.formControls.password.value, false)
     }
 
     const submitHandler = (e) => {
@@ -159,4 +141,10 @@ const Auth = () => {
     )
 }
 
-export default Auth;
+function mapDispatchToProps(dispatch) {
+    return {
+        auth: (email, password, isLogin) => dispatch(auth(email, password, isLogin))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Auth);
